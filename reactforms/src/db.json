@@ -1,0 +1,31 @@
+{
+    "employeeData": [
+      {
+        "name": "Prince",
+        "age": "24",
+        "address": "shivaji nagar",
+        "department": "Administration",
+        "status": "Married",
+        "salary": "12000",
+        "id": 1
+      },
+      {
+        "name": "Rahul Kumar",
+        "age": "30",
+        "address": "abchjc",
+        "department": "Operations",
+        "status": "Married",
+        "salary": "410000",
+        "id": 2
+      },
+      {
+        "name": "xczvvv",
+        "age": "25252",
+        "address": "ghfdghdj",
+        "department": "student",
+        "salary": "5752",
+        "status": "Single",
+        "id": 3
+      }
+    ]
+  }
