@@ -1,0 +1,39 @@
+.navbar{
+  display: flex;
+ 
+  background-color: black;
+  justify-content:space-around;
+ color: white;
+ 
+ margin: auto;
+ margin-top: 20px;
+ width: 90%;
+
+}
+
+.ul-tag{
+  display: flex;
+  list-style-type: none;
+  margin-right: 10;
+  padding: 8px;
+}
+.li-tag{
+  margin-right: 20px;
+}
+.logo{
+  color: white;
+}
+.btn{
+  background-color:skyblue;
+  color: white;
+  margin-top: 15px;
+  width: 100px;
+  height: 25px;
+  font-weight: 200;
+  border-radius: 10px;
+
+}
+.btn-div{
+  margin: 5px;
+  padding: 5px;
+}
