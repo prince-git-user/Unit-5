@@ -7,8 +7,42 @@ export const Inventory = () => {
     pens: 40,
     inkpens:12
   });
+     
+
+  const handleBChange=(value)=>{
+    if(inv.books<=0){
+      return;
+    }
+    setInv(prevInv=>({...prevInv,books:inv.books+value}))
+    setTotal(inv.books+inv.pens+inv.notebooks+inv.inkpens)
+  }
+
+  const handleNBChange=(value)=>{
+    if(inv.notebooks<=0){
+      return;
+    }
+    setInv(prevInv=>({...prevInv,notebooks:inv.notebooks+value}))
+    setTotal(inv.books+inv.pens+inv.notebooks+inv.inkpens)
+  }
+
+  const handlePChange=(value)=>{
+    if(inv.pens<=0){
+      return;
+    }
+    setInv(prevInv=>({...prevInv,pens:inv.pens+value}))
+    setTotal(inv.books+inv.pens+inv.notebooks+inv.inkpens)
+  }
 
 
+  const handleIPChange=(value)=>{
+    if(inv.inkpens<=0){
+      return;
+    }
+    setInv(prevInv=>({...prevInv, inkpens:inv.inkpens+value}))
+    setTotal(inv.books+inv.pens+inv.notebooks+inv.inkpens)
+  }
+
+  const [total,setTotal]=useState(inv.books+inv.pens+inv.notebooks+inv.inkpens)
   
  
     // Create add and remove functions here that changes the
@@ -26,33 +60,31 @@ export const Inventory = () => {
     >
       <div className="items">
         <span>Books:{inv.books} </span>
-        <button  onClick={()=>{
-           setInv({books:50,notebooks:42,pens:85})
-        }} className="circlularButton">+</button>
-        <button onClick={()=>{setInv(inv.books-inv.books-1)}}  className="circlularButton">-</button>
+        <button onClick={()=>handleBChange(1)}  className="circlularButton">+</button>
+        <button onClick={()=>handleBChange(-1)} className="circlularButton">-</button>
         <span>{inv.books}</span>
       </div>
       <div className="items">
         <span>Notebooks:{inv.notebooks} </span>
-        <button className="circlularButton">+</button>
-        <button className="circlularButton">-</button>
+        <button onClick={()=>handleNBChange(1)}   className="circlularButton">+</button>
+        <button onClick={()=>handleNBChange(-1)}  className="circlularButton">-</button>
         <span>{inv.notebooks}</span>
       </div>
       <div className="items">
         <span>Pen:{inv.pens} </span>
-        <button className="circlularButton">+</button>
-        <button className="circlularButton">-</button>
+        <button onClick={()=>handlePChange(1)} className="circlularButton">+</button>
+        <button onClick={()=>handlePChange(-1)} className="circlularButton">-</button>
         <span>{inv.pens}</span>
       </div>
       <div className="items">
         <span>Ink Pens:{inv.inkpens} </span>
-        <button className="circlularButton">+</button>
-        <button className="circlularButton">-</button>
+        <button onClick={()=>handleIPChange(1)} className="circlularButton">+</button>
+        <button  onClick={()=>handleIPChange(-1)}className="circlularButton">-</button>
         <span>{inv.inkpens}</span>
       </div>
-      
+           
             {/*calculate total and show it*/}
-      total: {0}
+      total: {total}
     </div>
   );
 };
