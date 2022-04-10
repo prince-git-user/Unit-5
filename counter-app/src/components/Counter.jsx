@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-
+import "./Counter.css"
 
 
 function Counter(){
@@ -13,7 +13,7 @@ const handleChange=(value)=>{
 
     return (
         <div>
-            <h3>Counter :{counter}</h3>
+            <h3 className={counter%2===0 ? "even" : "odd"}>Counter :{counter}</h3>
             <button onClick={()=>handleChange(1)}>ADD</button>
             <button onClick={()=>handleChange(-1)}>subtract</button>
             <button onClick={()=>{setCounter(counter*2)}}>Mult</button>

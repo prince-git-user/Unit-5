@@ -27,9 +27,9 @@ export const Inventory = () => {
       <div className="items">
         <span>Books:{inv.books} </span>
         <button  onClick={()=>{
-         return  setInv(inv.books)
+           setInv({books:50,notebooks:42,pens:85})
         }} className="circlularButton">+</button>
-        <button  className="circlularButton">-</button>
+        <button onClick={()=>{setInv(inv.books-inv.books-1)}}  className="circlularButton">-</button>
         <span>{inv.books}</span>
       </div>
       <div className="items">
