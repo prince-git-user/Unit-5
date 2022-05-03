@@ -1,45 +1,22 @@
 import { useState } from 'react'
-import logo from './logo.svg'
+import{Button} from "./components/Button"
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [theme1, setTheme1] = useState("first_btn")
+ 
+return (
+  <div className="App">
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+    <Button theme1={theme1}>Primary Button</Button> {/* bg coloer blue*/}
+    <Button  >Default Button</Button>
+    <Button theme1={"dott"} >Dashed Button </Button> <br/>
+    <Button theme1={"textbt"} >Text Button</Button>
+    <Button theme1={"lestbt"}>Link Button </Button>{/*colore blue no border*/}
+   
+  </div>
+)
 }
+
 
 export default App
