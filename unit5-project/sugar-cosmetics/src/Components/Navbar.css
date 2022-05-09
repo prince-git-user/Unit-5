@@ -61,3 +61,11 @@ input{
     margin-top: 15px;
 }
 
+.nav-link{
+    text-decoration: none;
+    color: black;
+}
+.login-div{
+    padding-top: 25px;
+    margin-top: auto;
+}

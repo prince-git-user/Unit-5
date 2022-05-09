@@ -30,11 +30,11 @@ export const Cart =()=>{
     },[]);
 
     const getData=async()=>{
-        const data=await fetch("http://localhost:8080/cart")
+        const data=await fetch("https://sugarcosmetic.herokuapp.com/carts")
           .then((d)=>
             d.json()
            );
-           setData(data);
+           setData(data.cart);
      
     }
 
@@ -48,7 +48,8 @@ export const Cart =()=>{
     const total = data.map(d => d.price).reduce((prev, curr) => prev + curr, 0); 
 
      function handledelete (id){
-       fetch(`http://localhost:8080/cart/${id}`,{method:'DELETE'
+         console.log("deleted")
+       fetch(`https://sugarcosmetic.herokuapp.com/carts${id}`,{method:'DELETE'
        }).then((result)=>{
            result.json().then((res)=>{
                console.warn(res)
@@ -79,7 +80,7 @@ export const Cart =()=>{
                  <p>{d.Name}</p>
                  <p>₹{d.price}</p>
                  <button onClick={()=>{
-                     handledelete(d.id)
+                     handledelete(id)
                      getData()
                  }
                

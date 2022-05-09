@@ -304,6 +304,22 @@
       "price": 412,
       "amount": "312",
       "id": 15
+    },
+    {
+      "imgSrc": "https://cdn.shopify.com/s/files/1/0906/2558/products/sugar-cosmetics-acne-combo-pack-of-6-14056089157715.jpg?v=1619113757",
+      "Name": "Acne Combo (Pack of 6)",
+      "ratingNum": 5,
+      "price": 599,
+      "amount": "147",
+      "id": 16
+    },
+    {
+      "imgSrc": "https://cdn.shopify.com/s/files/1/0906/2558/products/sugar-cosmetics-total-mask-erade-pack-of-3-14056092074067.jpg?v=1644930751",
+      "Name": "Total Mask-erade (Pack of 3)",
+      "ratingNum": 4.8,
+      "price": 299,
+      "amount": "172",
+      "id": 17
     }
   ]
 }

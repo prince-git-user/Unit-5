@@ -48,11 +48,11 @@ export const Checkout =()=>{
     },[]);
 
     const getData=async()=>{
-        const data=await fetch("http://localhost:8080/cart")
+        const data=await fetch("https://sugarcosmetic.herokuapp.com/carts")
           .then((d)=>
             d.json()
            );
-           setData(data);
+           setData(data.cart);
      
     }
 

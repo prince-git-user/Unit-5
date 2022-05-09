@@ -15,11 +15,11 @@ export const Trending=()=>{
     },[]);
 
     const getData=async()=>{
-        const data=await fetch("http://localhost:8080/trending")
+        const data=await fetch("https://sugarcosmetic.herokuapp.com/trendings")
           .then((d)=>
             d.json()
            );
-           setTrending(data);
+           setTrending(data.trending);
     
          
     }
@@ -42,7 +42,21 @@ return(
                  <p>{t.ratingNum}<span>
                
                  ({t.amount})</span></p>
-                 <button>ADD TO CART</button>
+                 <br/>
+                 <button  onClick={()=>{
+                  console.log("clicked")
+                  alert("Product added to cart")
+                 
+                const data=t;
+               fetch("https://sugarcosmetic.herokuapp.com/carts",{
+                   method:"POST",
+                 headers:{
+                     "content-type":"application/json"
+                 },
+                 body:JSON.stringify(data)
+               })
+
+            }}>ADD TO CART</button>
                 
              </div>
          ))}

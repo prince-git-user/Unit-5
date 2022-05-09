@@ -4,7 +4,11 @@ import { FaBeer } from 'react-icons/fa';
 import { FaUserCircle } from "react-icons/fa";
 
 
+import { BsPersonCheckFill } from "react-icons/bs";
+
+import { FaPercentage } from "react-icons/fa";
 import { AiTwotoneHeart,AiTwotoneShopping } from "react-icons/ai";
+
 
 
 import {Link} from "react-router-dom"
@@ -29,8 +33,8 @@ export const Navbar=()=>{
        </div>
        <div className="login-div">
          
-         <img className="login-logo" src="https://in.sugarcosmetics.com/desc-images/person.png" alt="icon.png"/>
-           <Link to="/login">  <span className="register">Login/Register</span></Link>
+        {/* <span className="login-logo"><BsPersonCheckFill/></span> */}
+           <Link className="nav-link" to="/login">  <span className="register">Login/Register</span></Link>
          
              
            
@@ -40,11 +44,11 @@ export const Navbar=()=>{
             <span onClick={()=>{
               alert("you liked this")
             }} className="icons-modify"><AiTwotoneHeart/></span>
-             <Link to="/cart" className="icons-modify"><AiTwotoneShopping/></Link>
-            
+             <Link   to="/cart" className="icons-modify nav-link"><AiTwotoneShopping/></Link>
+             <Link  to="/cart" className="icons-modify nav-link"><FaPercentage/></Link>
 
 
-<span className="icons-modify"><AiTwotoneShopping/></span>
+             
 
 
             

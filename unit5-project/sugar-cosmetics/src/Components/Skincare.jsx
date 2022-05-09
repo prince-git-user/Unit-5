@@ -15,11 +15,11 @@ export const Skincare=()=>{
     },[]);
 
     const getData=async()=>{
-        const data=await fetch("http://localhost:8080/skincare")
+        const data=await fetch("https://sugarcosmetic.herokuapp.com/skincares")
           .then((d)=>
             d.json()
            );
-           setSkincare(data);
+           setSkincare(data.skincare);
     
          
     }
@@ -41,7 +41,21 @@ return(
                  <p>{t.ratingNum}<span>
                
                  ({t.amount})</span></p>
-                 <button>ADD TO CART</button>
+                 <br/>
+                 <button onClick={()=>{
+                  console.log("clicked")
+                  alert("Product added to cart")
+                 
+                const data=t;
+               fetch("https://sugarcosmetic.herokuapp.com/carts",{
+                   method:"POST",
+                 headers:{
+                     "content-type":"application/json"
+                 },
+                 body:JSON.stringify(data.skincare)
+               })
+
+            }}>ADD TO CART</button>
              </div>
          ))}
          </div>
